@@ -1,0 +1,20 @@
+version: '3'
+services:
+    web:
+        image: codeigniter4project
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"
+        volumes:
+            - C:\Users\Tiago Oliveira\PhpstormProjects\todolist:/var/www/html
+
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_DB: codeigniter_db
+            POSTGRES_USER: codeigniter_user
+            POSTGRES_PASSWORD: codeigniter_password
+        ports:
+            - "5432:5432"
